@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 function Header() {
   const [burgerOpen, setBurgerOpen] = useState(true);
 
   return (
     <Container>
+      <a href="https://github.com/asherayub">
+        <MyGitHub />
+      </a>
       <a>
         <img src="/images/logo.svg" alt="" />
       </a>
@@ -23,7 +27,7 @@ function Header() {
         <CustomMenu onClick={() => setBurgerOpen(false)} />
       </RightMenu>
       <BurgerNav show={burgerOpen}>
-        <CustomClose onClick={()=>setBurgerOpen(true)} />
+        <CustomClose onClick={() => setBurgerOpen(true)} />
         <li>
           <a href="#">Existing Inventory</a>
         </li>
@@ -58,6 +62,12 @@ const Container = styled.div`
   padding: 0 20px;
   backdrop-filter: blur(5px);
   z-index: 3;
+`;
+const MyGitHub = styled(GitHubIcon)`
+  position: absolute;
+  left: 150px;
+  top: 16px;
+  color: black;
 `;
 const Menu = styled.div`
   display: flex;
@@ -97,7 +107,6 @@ const BurgerNav = styled.div`
   bottom: 0;
   right: 0;
   background-color: white;
-
   width: 300px;
   height: 100vh;
   z-index: 5;
