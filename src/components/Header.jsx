@@ -9,9 +9,6 @@ function Header() {
 
   return (
     <Container>
-      <a href="https://github.com/asherayub">
-        <MyGitHub />
-      </a>
       <a>
         <img src="/images/logo.svg" alt="" />
       </a>
@@ -28,6 +25,21 @@ function Header() {
       </RightMenu>
       <BurgerNav show={burgerOpen}>
         <CustomClose onClick={() => setBurgerOpen(true)} />
+        <a href="https://github.com/asherayub">
+        <MyGitHub />
+      </a>
+        <li>
+          <a href="#">Model S</a>
+        </li>
+        <li>
+          <a href="#">Model Y</a>
+        </li>
+        <li>
+          <a href="#">Model 3</a>
+        </li>
+        <li>
+          <a href="#">Model X</a>
+        </li>
         <li>
           <a href="#">Existing Inventory</a>
         </li>
@@ -43,6 +55,7 @@ function Header() {
         <li>
           <a href="#">Readster</a>
         </li>
+        
       </BurgerNav>
     </Container>
   );
@@ -65,8 +78,8 @@ const Container = styled.div`
 `;
 const MyGitHub = styled(GitHubIcon)`
   position: absolute;
-  left: 150px;
-  top: 16px;
+  left: 20px;
+  top: 20px;
   color: black;
 `;
 const Menu = styled.div`
@@ -95,6 +108,11 @@ const RightMenu = styled.div`
     margin-right: 10px;
     flex-wrap: nowrap;
     color: black;
+  }
+  @media (max-width: 360px){
+    a{
+      font-size: 3.5vw;
+    }
   }
 `;
 const CustomMenu = styled(MenuIcon)`
